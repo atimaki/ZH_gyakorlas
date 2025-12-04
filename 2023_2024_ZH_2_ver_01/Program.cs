@@ -87,7 +87,6 @@ namespace _2023_24_ZH_2_ver01 {
             else
                 Console.WriteLine($"A(z) {meals[littleNormalVegetableIndex].Name} ugyanannyiba kerül, mint a {meals[littleFriedMealIndex].Name}.");
 
-
             // 6. feladat
             DecorateText("\n6. feladat");
             DecorateText("Adja meg az Ön számára veszélyes allergéneket:", true, false, false);
@@ -179,7 +178,8 @@ namespace _2023_24_ZH_2_ver01 {
             }
 
             for (int i = 0; i < indexes.GetLength(0); i++) {
-                DecorateText(meals[indexes[i, 0]].OrderDate.ToString("dddd"), true, false, true, false);
+                string dayName = meals[indexes[i, 0]].OrderDate.ToString("dddd");
+                DecorateText(dayName[0].ToString().ToUpper() + dayName.Substring(1), true, false, true, false);
                 DecorateText($" ({indexes[i, 3]} Ft)", true, false, false, true);
                 DecorateText(meals[indexes[i, 0]].Cathegory + ": ", true, false, false, false);
                 Console.WriteLine($"{meals[indexes[i, 0]].Name} - {meals[indexes[i, 0]].Price} Ft");
